@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منيو تفاعلي - مطعمنا</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>منيو مطعمنا التفاعلي</h1>
+            <p class="description">استمتع بتجربة فريدة مع منيو تفاعلي يقدم تأثيرات صوتية وبصرية مع كل طلب</p>
+        </header>
+        
+        <div class="categories">
+            <button class="category-btn active" data-category="cold-drinks">المشروبات الباردة</button>
+            <button class="category-btn" data-category="hot-drinks">المشروبات الساخنة</button>
+            <button class="category-btn" data-category="grills">المشاوي</button>
+            <button class="category-btn" data-category="pizza">البيتزا</button>
+            <button class="category-btn" data-category="appetizers">المقبلات</button>
+            <button class="category-btn" data-category="desserts">الحلويات</button>
+        </div>
+        
+        <section id="cold-drinks" class="menu-section active">
+            <h2 class="section-title">المشروبات الباردة</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-sound="ice">
+                    <div class="item-name">
+                        <span>عصير برتقال طازج</span>
+                        <span class="item-price">15 ريال</span>
+                    </div>
+                    <p class="item-description">عصير برتقال طازج مع قطع ثلج منعشة</p>
+                </div>
+                <div class="menu-item" data-sound="ice">
+                    <div class="item-name">
+                        <span>ليمون بالنعناع</span>
+                        <span class="item-price">12 ريال</span>
+                    </div>
+                    <p class="item-description">ليمون طازج مع أوراق النعناع والثلج</p>
+                </div>
+                <div class="menu-item" data-sound="ice">
+                    <div class="item-name">
+                        <span>سموذي الفراولة</span>
+                        <span class="item-price">18 ريال</span>
+                    </div>
+                    <p class="item-description">مزيج من الفراولة الطازجة والزبادي والثلج</p>
+                </div>
+                <div class="menu-item" data-sound="ice">
+                    <div class="item-name">
+                        <span>موهيتو</span>
+                        <span class="item-price">16 ريال</span>
+                    </div>
+                    <p class="item-description">نعناع طازج وليمون وقطع ثلج منعشة</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="grills" class="menu-section">
+            <h2 class="section-title">المشاوي</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-sound="grill">
+                    <div class="item-name">
+                        <span>شيش طاووق</span>
+                        <span class="item-price">35 ريال</span>
+                    </div>
+                    <p class="item-description">قطع دجاج مشوية على الفحم مع تتبيلة خاصة</p>
+                </div>
+                <div class="menu-item" data-sound="grill">
+                    <div class="item-name">
+                        <span>كباب حلة</span>
+                        <span class="item-price">40 ريال</span>
+                    </div>
+                    <p class="item-description">لحم ضأن مفروم مشوي مع البصل والتوابل</p>
+                </div>
+                <div class="menu-item" data-sound="grill">
+                    <div class="item-name">
+                        <span>شاورما لحم</span>
+                        <span class="item-price">30 ريال</span>
+                    </div>
+                    <p class="item-description">شرائح لحم مشوية على الفحم مع الخضار</p>
+                </div>
+                <div class="menu-item" data-sound="grill">
+                    <div class="item-name">
+                        <span>سمك مشوي</span>
+                        <span class="item-price">45 ريال</span>
+                    </div>
+                    <p class="item-description">سمك نقي مشوي على الفحم مع الليمون</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="hot-drinks" class="menu-section">
+            <h2 class="section-title">المشروبات الساخنة</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">
+                        <span>قهوة عربية</span>
+                        <span class="item-price">10 ريال</span>
+                    </div>
+                    <p class="item-description">قهوة عربية أصيلة مع الهيل</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">
+                        <span>شاي بالنعناع</span>
+                        <span class="item-price">8 ريال</span>
+                    </div>
+                    <p class="item-description">شاي أخضر مع أوراق النعناع الطازج</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="pizza" class="menu-section">
+            <h2 class="section-title">البيتزا</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-name">
+                        <span>بيتزا مارغريتا</span>
+                        <span class="item-price">35 ريال</span>
+                    </div>
+                    <p class="item-description">طماطم، جبن موزاريلا، ريحان طازج</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-name">
+                        <span>بيتزا خضار</span>
+                        <span class="item-price">40 ريال</span>
+                    </div>
+                    <p class="item-description">فلفل، طماطم، زيتون، بصل، فطر</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- تأثيرات بصرية -->
+        <div class="ice-effect" id="iceEffect"></div>
+        <div class="fire-effect" id="fireEffect"></div>
+    </div>
+
+    <!-- عناصر صوتية مخفية -->
+    <audio id="iceSound" preload="auto">
+        <source src="assets/audio/ice-sound.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="grillSound" preload="auto">
+        <source src="assets/audio/grill-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

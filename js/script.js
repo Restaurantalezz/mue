@@ -10,11 +10,14 @@ const grillSound = document.getElementById('grillSound');
 
 // تهيئة التطبيق
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('تم تحميل الصفحة - جاهز للتأثيرات');
     initMenu();
 });
 
 // تهيئة المنيو
 function initMenu() {
+    console.log('تهيئة المنيو...');
+    
     // إضافة مستمعي الأحداث لأزرار الفئات
     categoryButtons.forEach(button => {
         button.addEventListener('click', handleCategoryClick);
@@ -25,8 +28,15 @@ function initMenu() {
         item.addEventListener('click', handleMenuItemClick);
     });
     
-    // تهيئة الأصوات
-    initAudio();
+    // اختبار الأصوات
+    testAudio();
+}
+
+// اختبار الأصوات
+function testAudio() {
+    console.log('اختبار توفر ملفات الصوت...');
+    console.log('صوت الثلج:', iceSound.src);
+    console.log('صوت الشواء:', grillSound.src);
 }
 
 // التعامل مع النقر على فئة
@@ -61,6 +71,9 @@ function handleMenuItemClick(event) {
     const item = event.currentTarget;
     const soundType = item.getAttribute('data-sound');
     
+    console.log('تم النقر على عنصر:', item.querySelector('.item-name span').textContent);
+    console.log('نوع الصوت:', soundType);
+    
     if (soundType === 'ice') {
         activateIceEffects();
     } else if (soundType === 'grill') {
@@ -68,14 +81,10 @@ function handleMenuItemClick(event) {
     }
 }
 
-// تهيئة الأصوات
-function initAudio() {
-    // يمكن إضافة إعدادات إضافية للأصوات هنا
-    console.log('تم تهيئة الأصوات');
-}
-
 // تفعيل تأثيرات الثلج
 function activateIceEffects() {
+    console.log('تفعيل تأثيرات الثلج...');
+    
     // تشغيل صوت الثلج
     playSound(iceSound);
     
@@ -85,6 +94,8 @@ function activateIceEffects() {
 
 // تفعيل تأثيرات الشواء
 function activateGrillEffects() {
+    console.log('تفعيل تأثيرات الشواء...');
+    
     // تشغيل صوت الشواء
     playSound(grillSound);
     
@@ -102,10 +113,12 @@ function playSound(audioElement) {
 
 // تفعيل تأثير الثلج البصري
 function activateIceVisualEffect() {
+    console.log('تفعيل التأثير البصري للثلج...');
+    
     iceEffect.classList.add('active');
     
     // إنشاء قطرات مياه
-    createWaterDroplets(20);
+    createWaterDroplets(15);
     
     // إزالة التأثير بعد 3 ثوان
     setTimeout(() => {
@@ -153,10 +166,12 @@ function removeAllWaterDroplets() {
 
 // تفعيل تأثير النار البصري
 function activateFireVisualEffect() {
+    console.log('تفعيل التأثير البصري للنار...');
+    
     fireEffect.classList.add('active');
     
     // إنشاء لهب عشوائي
-    createFlames(15);
+    createFlames(12);
     
     // إزالة التأثير بعد 3 ثوان
     setTimeout(() => {
@@ -193,13 +208,4 @@ function createFlame() {
 function removeAllFlames() {
     const flames = document.querySelectorAll('.flame');
     flames.forEach(flame => flame.remove());
-}
-
-// تصدير الدوال للاستخدام الخارجي (إذا لزم الأمر)
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        initMenu,
-        activateIceEffects,
-        activateGrillEffects
-    };
 }

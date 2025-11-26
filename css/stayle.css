@@ -87,45 +87,60 @@ h1 {
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.menu-item {
+/* تصميم الجدول الجديد */
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    padding: 20px;
+    overflow: hidden;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
 }
 
-.menu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.menu-table thead {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-table th {
+    padding: 20px;
+    text-align: right;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-table td {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-table tr:last-child td {
+    border-bottom: none;
+}
+
+.menu-table tr:hover td {
     background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
 }
 
 .item-name {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 .item-price {
     color: #ffcc00;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .item-description {
-    font-size: 0.95rem;
-    opacity: 0.8;
+    font-size: 1rem;
+    opacity: 0.9;
     line-height: 1.5;
 }
 
@@ -148,11 +163,12 @@ h1 {
 
 .water-droplet {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: rgba(173, 216, 230, 0.7);
+    width: 15px;
+    height: 15px;
+    background: rgba(173, 216, 230, 0.8);
     border-radius: 50%;
     animation: fall linear forwards;
+    box-shadow: 0 0 10px rgba(173, 216, 230, 0.5);
 }
 
 .fire-effect {
@@ -165,7 +181,7 @@ h1 {
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.5s ease;
-    background: radial-gradient(circle, rgba(255,100,0,0.3) 0%, rgba(255,50,0,0.1) 40%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,100,0,0.4) 0%, rgba(255,50,0,0.2) 40%, transparent 70%);
 }
 
 .fire-effect.active {
@@ -177,9 +193,10 @@ h1 {
     bottom: 0;
     width: 40px;
     height: 60px;
-    background: linear-gradient(to top, rgba(255,100,0,0.8), rgba(255,200,0,0.6), transparent);
+    background: linear-gradient(to top, rgba(255,100,0,0.9), rgba(255,200,0,0.7), transparent);
     border-radius: 50% 50% 20% 20%;
     animation: flicker 0.5s infinite alternate;
+    box-shadow: 0 0 20px rgba(255,100,0,0.5);
 }
 
 @keyframes fadeIn {
@@ -188,12 +205,12 @@ h1 {
 }
 
 @keyframes fall {
-    to { transform: translateY(100vh); }
+    to { transform: translateY(100vh) rotate(360deg); }
 }
 
 @keyframes flicker {
     0%, 100% { transform: scaleY(1) scaleX(1); opacity: 0.8; }
-    50% { transform: scaleY(1.1) scaleX(0.9); opacity: 1; }
+    50% { transform: scaleY(1.2) scaleX(0.8); opacity: 1; }
 }
 
 /* تأثيرات الألوان حسب الفئة */
@@ -211,8 +228,15 @@ body.grills {
         font-size: 2.2rem;
     }
     
-    .menu-grid {
-        grid-template-columns: 1fr;
+    .menu-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .menu-table th,
+    .menu-table td {
+        padding: 15px 10px;
+        font-size: 0.9rem;
     }
     
     .categories {
@@ -222,5 +246,13 @@ body.grills {
     .category-btn {
         padding: 10px 15px;
         font-size: 1rem;
+    }
+    
+    .item-name {
+        font-size: 1.1rem;
+    }
+    
+    .item-description {
+        font-size: 0.9rem;
     }
 }
